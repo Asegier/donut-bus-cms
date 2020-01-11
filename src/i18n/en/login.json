@@ -1,0 +1,10 @@
+{
+    "testing": "ultra ENGLISH!",
+    "email": "Email Address",
+    "password": "Password",
+    "emailPlaceholder": "Enter Email",
+    "passwordPlaceholder": "Password",
+    "errotMsg": "Error",
+    "loginBtn": "Login",
+    "forgotPassword": "忘記密碼？"
+}
