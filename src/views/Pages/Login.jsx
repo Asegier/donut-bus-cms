@@ -78,7 +78,7 @@ class Login extends Component {
                                     {t('email')}
                                 </Col>
                                 <Col md="9">
-                                    <FormControl validated required placeholder="Enter email" type="email" onChange={this.onType}/>
+                                    <FormControl validated required placeholder={t('emailPlaceholder')} type="email" onChange={this.onType}/>
                                 </Col>
                             </Row>
                         </FormGroup>
@@ -88,8 +88,8 @@ class Login extends Component {
                                     {t('password')}
                                 </Col>
                                 <Col md="9">
-                                    <FormControl required placeholder="Password" type="password" autoComplete="off" onChange={this.onType}/>
-                                    <p className="error">hello</p>
+                                    <FormControl required placeholder={t('passwordPlaceholder')} type="password" autoComplete="off" onChange={this.onType}/>
+                                    <p className="error">{t('errotMsg')}</p>
                                 </Col>
                             </Row>
                         </FormGroup>
@@ -99,11 +99,11 @@ class Login extends Component {
                 }
                 legend={
                 <Button bsStyle="login" fill wd disabled>
-                    Login
+                    {t('loginBtn')}
                 </Button>
                 }
                 forgotPassword={
-                    <div className="text-right">忘記密碼？</div>
+                    <div className="text-right">{t('forgotPassword')}</div>
                 }
                 ftTextCenter
             />

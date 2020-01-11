@@ -6,6 +6,8 @@ import LoginEN from './en/login';
 
 // import LanguageTW from './zh-TW';
 import LanguageHK from './zh-hk';
+import LoginHK from './zh-hk/login';
+
 
 import LanguageDetector from "i18next-browser-languagedetector";
 
@@ -56,6 +58,7 @@ const i18nextInitOptions = {
         },
         "zh-HK": {
             translation: LanguageHK,
+            translation: LoginHK,
         },
     },
     whitelist: ["en", "zh-HK"],

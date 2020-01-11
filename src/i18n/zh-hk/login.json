@@ -1,0 +1,10 @@
+{
+    "testing": "This is CHINESE",
+    "email": "電郵地址",
+    "password": "密碼",
+    "emailPlaceholder": "請輸入",
+    "passwordPlaceholder": "請輸入",
+    "errotMsg": "電郵或密碼輸入錯誤，你還有4次機會。",
+    "loginBtn": "LoginCN",
+    "forgotPassword": "忘記密碼？"
+}
