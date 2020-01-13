@@ -4,7 +4,7 @@
     "password": "Password",
     "emailPlaceholder": "Enter Email",
     "passwordPlaceholder": "Password",
-    "errotMsg": "Error",
+    "errorMsg": "Error",
     "loginBtn": "Login",
     "forgotPassword": "Forgot Password?"
 }

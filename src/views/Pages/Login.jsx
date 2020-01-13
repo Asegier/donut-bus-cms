@@ -38,9 +38,11 @@ class Login extends Component {
     this.state = {
       cardHidden: true,
       email: "",
-      password: ""
+      password: "",
+      checkInput: false
     };
     this.emailInput = React.createRef();
+    this.passwordInput = React.createRef();
   }
   componentDidMount() {
     setTimeout(
@@ -51,20 +53,35 @@ class Login extends Component {
     );
   }
 
-  onType = (e) => {
-    const email = this.state.email;
-    console.log('email', email);
+  onType = () => {
+      if(this.emailInput.value && this.passwordInput.value){
+          this.setState({checkInput: true});
+      } else {
+          this.setState({checkInput: false});
+      }
+    console.log(this.emailInput.value)
 }
 
   handleSubmit = () => {
-
+    console.log('submitting');
   }
+
 
   render() {
       const { t } = this.props;
+      let loginBtn;
+      if (this.state.checkInput){
+          loginBtn = <Button bsStyle="login" fill wd >
+          {t('loginBtn')}
+      </Button>
+      } else {
+        loginBtn = <Button bsStyle="login" fill wd disabled >
+        {t('loginBtn')}
+    </Button>
+      }
     return (
         <div className="loginPage">
-            <form onSubmit={this.handleSubmit}>
+            <form>
             <Card
                 hidden={this.state.cardHidden}
                 title="Donut Bus 管理平台"
@@ -78,7 +95,7 @@ class Login extends Component {
                                     {t('email')}
                                 </Col>
                                 <Col md="9">
-                                    <FormControl validated required placeholder={t('emailPlaceholder')} type="email" onChange={this.onType}/>
+                                    <FormControl validated required inputRef={ref => { this.emailInput = ref; }} placeholder={t('emailPlaceholder')} type="email" onChange={this.onType} />
                                 </Col>
                             </Row>
                         </FormGroup>
@@ -88,8 +105,8 @@ class Login extends Component {
                                     {t('password')}
                                 </Col>
                                 <Col md="9">
-                                    <FormControl required placeholder={t('passwordPlaceholder')} type="password" autoComplete="off" onChange={this.onType}/>
-                                    <p className="error">{t('errotMsg')}</p>
+                                    <FormControl required inputRef={ref => { this.passwordInput = ref; }} placeholder={t('passwordPlaceholder')} type="password" autoComplete="off" onChange={this.onType}/>
+                                    <p className="error">{t('errorMsg')}</p>
                                 </Col>
                             </Row>
                         </FormGroup>
@@ -97,11 +114,7 @@ class Login extends Component {
                     
                 </div>
                 }
-                legend={
-                <Button bsStyle="login" fill wd disabled>
-                    {t('loginBtn')}
-                </Button>
-                }
+                legend={ loginBtn }
                 forgotPassword={
                     <div className="text-right">{t('forgotPassword')}</div>
                 }
