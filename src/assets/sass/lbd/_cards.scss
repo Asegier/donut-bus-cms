@@ -339,7 +339,7 @@
 
 .card-login{
   width: 600px;
-  height: 455px;
+  height: 368px;
   margin: 0 auto;
   border-radius: 16.5px;
   -webkit-border-radius: 16.5px;
@@ -349,5 +349,9 @@
   padding: 30px;
   .header{
     margin-bottom: 20px;
+  }
+  .forgotPassword{
+    color: black;
+    text-decoration: underline;
   }
 }

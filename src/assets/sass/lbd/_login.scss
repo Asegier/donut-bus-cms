@@ -3,3 +3,7 @@
     min-height: calc(100vh - 100px - 27px);
     padding-top: 100px;
 }
+.loginError{
+    margin-top: 5px;
+    color: $wrong;
+}

@@ -32,16 +32,14 @@ import Checkbox from "components/CustomCheckbox/CustomCheckbox.jsx";
 
 import { withTranslation } from "react-i18next";
 
-class Login extends Component {
+class ForgotPasswordPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
       cardHidden: true,
       email: "",
       password: "",
-      checkInput: false,
-      error: "hidden",
-      errorClass: "formError"
+      checkInput: false
     };
     this.emailInput = React.createRef();
     this.passwordInput = React.createRef();
@@ -61,10 +59,11 @@ class Login extends Component {
       } else {
           this.setState({checkInput: false});
       }
+    console.log(this.emailInput.value)
 }
 
   handleSubmit = () => {
-    this.setState({error: ""});
+    console.log('submitting');
   }
 
 
@@ -72,7 +71,7 @@ class Login extends Component {
       const { t } = this.props;
       let loginBtn;
       if (this.state.checkInput){
-          loginBtn = <Button bsStyle="login" fill wd onClick={this.handleSubmit} type="submit">
+          loginBtn = <Button bsStyle="login" fill wd onClick={this.handleSubmit} >
           {t('loginBtn')}
       </Button>
       } else {
@@ -82,10 +81,10 @@ class Login extends Component {
       }
     return (
         <div className="loginPage">
-            <form onSubmit={this.handleSubmit}>
+            <form}>
             <Card
                 hidden={this.state.cardHidden}
-                title={t('loginTitle')}
+                title="Donut Bus 管理平台"
                 login
                 content={
                 <div style={{width: "100%"}}>
@@ -96,7 +95,7 @@ class Login extends Component {
                                     {t('email')}
                                 </Col>
                                 <Col md="9">
-                                    <FormControl inputRef={ref => { this.emailInput = ref; }} placeholder={t('emailPlaceholder')} type="email" onChange={this.onType} className={`formError`}/>
+                                    <FormControl error inputRef={ref => { this.emailInput = ref; }} placeholder={t('emailPlaceholder')} type="email" onChange={this.onType} />
                                 </Col>
                             </Row>
                         </FormGroup>
@@ -106,8 +105,8 @@ class Login extends Component {
                                     {t('password')}
                                 </Col>
                                 <Col md="9">
-                                    <FormControl inputRef={ref => { this.passwordInput = ref; }} placeholder={t('passwordPlaceholder')} type="password" autoComplete="off" onChange={this.onType}/>
-                                    <p className={`loginError ${this.state.error}`}>{t('errorMsg')}</p>
+                                    <FormControl required inputRef={ref => { this.passwordInput = ref; }} placeholder={t('passwordPlaceholder')} type="password" autoComplete="off" onChange={this.onType}/>
+                                    <p className="error">{t('errorMsg')}</p>
                                 </Col>
                             </Row>
                         </FormGroup>
@@ -117,15 +116,15 @@ class Login extends Component {
                 }
                 legend={ loginBtn }
                 forgotPassword={
-                    <div className="text-right"><a className="forgotPassword">{t('forgotPassword')}</a></div>
+                    <div className="text-right">{t('forgotPassword')}</div>
                 }
                 ftTextCenter
             />
-            </form>
+            </form}>
         </div>
       
     );
   }
 }
 
-export default withTranslation()(Login);
+export default withTranslation()(ForgotPasswordPage);
