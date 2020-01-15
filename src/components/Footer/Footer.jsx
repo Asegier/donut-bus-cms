@@ -23,7 +23,8 @@ class Footer extends Component {
       <footer
         className={
           "footer" +
-          (this.props.transparent !== undefined ? " footer-transparent" : "")
+          (this.props.transparent !== undefined ? " footer-transparent" : "") +
+          (this.props.small !== undefined ? " footer-small" : "")
         }
       >
         <div

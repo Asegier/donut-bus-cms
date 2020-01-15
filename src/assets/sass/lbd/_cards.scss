@@ -337,9 +337,8 @@
   }
 }
 
-.card-login{
+.card-login, .card-forget, .card-forget__complete{
   width: 600px;
-  height: 368px;
   margin: 0 auto;
   border-radius: 16.5px;
   -webkit-border-radius: 16.5px;
@@ -347,11 +346,31 @@
   -ms-border-radius: 16.5px;
   -o-border-radius: 16.5px;
   padding: 30px;
+}
+
+.card-login{
+  height: 368px;
+
   .header{
     margin-bottom: 20px;
   }
+
   .forgotPassword{
     color: black;
     text-decoration: underline;
+    &:hover{
+      cursor: pointer;
+    }
   }
+}
+
+.card-forget{
+  height: 312px;
+  .title, .forgotText{
+    margin-bottom: 25px;
+  }
+}
+
+.card-forget__complete{
+  height: 184px;
 }

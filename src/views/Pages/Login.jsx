@@ -117,7 +117,7 @@ class Login extends Component {
                 }
                 legend={ loginBtn }
                 forgotPassword={
-                    <div className="text-right"><a className="forgotPassword">{t('forgotPassword')}</a></div>
+                    <div className="text-right"><a href="/forgot" className="forgotPassword">{t('forgotPassword')}</a></div>
                 }
                 ftTextCenter
             />

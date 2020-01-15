@@ -1,7 +1,6 @@
 .footer {
   background-color: $darkBlue;
   line-height: $line-height;
-
   nav > ul {
     list-style: none;
     margin: 0;
@@ -65,8 +64,8 @@
       float: left;
     }
     a {
-      padding: 10px 0px;
-      margin: 15px 10px 15px 0px;
+      // padding: 10px 0px;
+      // margin: 15px 10px 15px 0px;
     }
   }
 }
@@ -150,4 +149,20 @@
   .numbers h4 {
     margin: $margin-bottom;
   }
+}
+.footer-small{
+  height: 50px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  .copyright{
+    margin-top: 10px;
+    margin-bottom: 0;
+    padding: 0;
+  }
+  nav > ul > li >a{
+      margin: 15px;
+      padding: 0;
+  }
+
 }

@@ -16,13 +16,13 @@
 */
 import React, { Component } from "react";
 import {
-  Grid,
-  Row,
-  Col,
-  FormGroup,
-  ControlLabel,
-  FormControl,
-  FormControlFeedback
+    Grid,
+    Row,
+    Col,
+    FormGroup,
+    ControlLabel,
+    FormControl,
+    FormControlFeedback
 } from "react-bootstrap";
 
 import Card from "components/Card/Card.jsx";
@@ -33,98 +33,103 @@ import Checkbox from "components/CustomCheckbox/CustomCheckbox.jsx";
 import { withTranslation } from "react-i18next";
 
 class ForgotPasswordPage extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      cardHidden: true,
-      email: "",
-      password: "",
-      checkInput: false
-    };
-    this.emailInput = React.createRef();
-    this.passwordInput = React.createRef();
-  }
-  componentDidMount() {
-    setTimeout(
-      function() {
-        this.setState({ cardHidden: false });
-      }.bind(this),
-      700
-    );
-  }
+    constructor(props) {
+        super(props);
+        this.state = {
+        cardHidden: true,
+        email: "",
+        password: "",
+        checkInput: false,
+        error: "hidden",
+        errorClass: "formError",
+        complete: false
+        };
+        this.emailInput = React.createRef();
+        // this.passwordInput = React.createRef();
+    }
 
-  onType = () => {
-      if(this.emailInput.value && this.passwordInput.value){
-          this.setState({checkInput: true});
-      } else {
-          this.setState({checkInput: false});
-      }
-    console.log(this.emailInput.value)
-}
+    onType = () => {
+        if(this.emailInput.value){
+            this.setState({checkInput: true});
+        } else {
+            this.setState({checkInput: false});
+        }
+    }
 
-  handleSubmit = () => {
-    console.log('submitting');
-  }
+    handleSubmit = (e) => {
+        e.preventDefault();
+    this.setState({complete: true});
+    }
 
 
-  render() {
-      const { t } = this.props;
-      let loginBtn;
-      if (this.state.checkInput){
-          loginBtn = <Button bsStyle="login" fill wd onClick={this.handleSubmit} >
-          {t('loginBtn')}
-      </Button>
-      } else {
-        loginBtn = <Button bsStyle="login" fill wd disabled >
-        {t('loginBtn')}
+render() {
+    const { t } = this.props;
+    let loginBtn;
+    if (this.state.checkInput){
+        loginBtn = <Button bsStyle="login" fill wd onClick={this.handleSubmit} type="submit">
+        {t('forgotBtn')}
     </Button>
-      }
+    } else {
+        loginBtn = <Button bsStyle="login" fill wd disabled >
+        {t('forgotBtn')}
+    </Button>
+    }
     return (
         <div className="loginPage">
-            <form}>
-            <Card
+            {!this.state.complete &&
+                <form onSubmit={this.handleSubmit}>
+                    <Card
+                        title={t('forgotTitle')}
+                        forget
+                        content={
+                        <div style={{width: "100%"}}>
+                            <Grid style={{maxWidth: "100%"}}>
+                                <FormGroup validated>
+                                    <Row>
+                                        <div className="forgotText"> {t('forgotText')} </div>
+                                        <Col md="3" style={{paddingLeft: 0}}>
+                                            {t('email')}
+                                        </Col>
+                                        <Col md="9">
+                                            <FormControl inputRef={ref => { this.emailInput = ref; }} placeholder={t('emailPlaceholder')} type="email" onChange={this.onType} className={`formError`}/>
+                                        </Col>
+                                    </Row>
+                                </FormGroup>
+                            </Grid>
+                            
+                        </div>
+                        }
+                        legend={ loginBtn }
+                        ftTextCenter
+                    />
+                </form>
+            }
+            
+            {this.state.complete &&
+                <Card
                 hidden={this.state.cardHidden}
-                title="Donut Bus 管理平台"
-                login
+                title={t('forgotCompleteTitle')}
+                forgetComplete
                 content={
                 <div style={{width: "100%"}}>
                     <Grid style={{maxWidth: "100%"}}>
                         <FormGroup validated>
                             <Row>
-                                <Col md="3">
-                                    {t('email')}
-                                </Col>
-                                <Col md="9">
-                                    <FormControl error inputRef={ref => { this.emailInput = ref; }} placeholder={t('emailPlaceholder')} type="email" onChange={this.onType} />
-                                </Col>
-                            </Row>
-                        </FormGroup>
-                        <FormGroup validated>
-                            <Row>
-                                <Col md="3">
-                                    {t('password')}
-                                </Col>
-                                <Col md="9">
-                                    <FormControl required inputRef={ref => { this.passwordInput = ref; }} placeholder={t('passwordPlaceholder')} type="password" autoComplete="off" onChange={this.onType}/>
-                                    <p className="error">{t('errorMsg')}</p>
-                                </Col>
+                                <div className="forgotText"> {t('forgotCompleteText')} </div>
                             </Row>
                         </FormGroup>
                     </Grid>
                     
                 </div>
                 }
-                legend={ loginBtn }
-                forgotPassword={
-                    <div className="text-right">{t('forgotPassword')}</div>
-                }
                 ftTextCenter
             />
-            </form}>
+            }
+            
         </div>
-      
-    );
-  }
+
+        );
+    }
 }
 
 export default withTranslation()(ForgotPasswordPage);

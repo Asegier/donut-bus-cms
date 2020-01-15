@@ -40,6 +40,7 @@ import RegisterPage from "views/Pages/RegisterPage.jsx";
 // import LockScreenPage from "views/Pages/LockScreenPage.jsx";
 
 import Login from "views/Pages/Login.jsx";
+import ForgotPasswordPage from "views/Pages/ForgotPasswordPage";
 
 // var routes = [
 //   {
@@ -271,6 +272,13 @@ var routes = [
     name: "Login",
     icon: "pe-7s-graph",
     component: RegisterPage
+  },
+  {
+    path: "/forgot",
+    layout: "/admin",
+    name: "Forgot Password",
+    icon: "pe-7s-graph",
+    component: ForgotPasswordPage
   }
 ]
 export default routes;
