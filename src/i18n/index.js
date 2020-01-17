@@ -1,12 +1,14 @@
 import i18next from 'i18next';
 import {initReactI18next} from 'react-i18next';
 // import * as RNLocalize from 'react-native-localize';
-import LanguageEN from './en';
+import CommonEN from './en';
 import LoginEN from './en/login';
 
 // import LanguageTW from './zh-TW';
-import LanguageHK from './zh-hk';
+import CommonHK from './zh-hk';
 import LoginHK from './zh-hk/login';
+
+import mergeJSON from 'merge-json';
 
 
 import LanguageDetector from "i18next-browser-languagedetector";
@@ -45,6 +47,9 @@ import LanguageDetector from "i18next-browser-languagedetector";
 //     cacheUserLanguage: () => {},
 // };
 
+const EN = mergeJSON.merge(CommonEN, LoginEN);
+const HK = mergeJSON.merge(CommonHK, LoginHK);
+
 const i18nextInitOptions = {
     fallbackLng: {
         'en': ['en'],
@@ -53,12 +58,10 @@ const i18nextInitOptions = {
     debug: true,
     resources: {
         en: {
-            translation: LanguageEN,
-            translation: LoginEN,
+            translation: EN,
         },
         "zh-HK": {
-            translation: LanguageHK,
-            translation: LoginHK,
+            translation: HK,
         },
     },
     whitelist: ["en", "zh-HK"],

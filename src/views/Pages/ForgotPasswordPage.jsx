@@ -86,7 +86,7 @@ render() {
                             <Grid style={{maxWidth: "100%"}}>
                                 <FormGroup validated>
                                     <Row>
-                                        <div className="forgotText"> {t('forgotText')} </div>
+                        <div className="forgotText"> {t('forgotText')} {t('footerLink1')}</div>
                                         <Col md="3" style={{paddingLeft: 0}}>
                                             {t('email')}
                                         </Col>

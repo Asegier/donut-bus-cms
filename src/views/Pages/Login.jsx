@@ -93,7 +93,7 @@ class Login extends Component {
                         <FormGroup validated>
                             <Row>
                                 <Col md="3">
-                                    {t('email')}
+                                    {t('testing')}
                                 </Col>
                                 <Col md="9">
                                     <FormControl inputRef={ref => { this.emailInput = ref; }} placeholder={t('emailPlaceholder')} type="email" onChange={this.onType} className={`formError`}/>

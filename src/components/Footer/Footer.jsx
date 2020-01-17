@@ -17,8 +17,11 @@
 /*eslint-disable*/
 import React, { Component } from "react";
 
+import { withTranslation } from "react-i18next";
+
 class Footer extends Component {
   render() {
+    const { t } = this.props;
     return (
       <footer
         className={
@@ -35,7 +38,7 @@ class Footer extends Component {
           <nav className="pull-left">
             <ul>
               <li>
-                <a href="#pablo">Home</a>
+                <a href="#pablo">{t('footerLink1')}</a>
               </li>
               <li>
                 <a href="#pablo">Company</a>
@@ -58,4 +61,4 @@ class Footer extends Component {
     );
   }
 }
-export default Footer;
+export default withTranslation()(Footer);
