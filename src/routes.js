@@ -41,6 +41,7 @@ import RegisterPage from "views/Pages/RegisterPage.jsx";
 
 import Login from "views/Pages/Login.jsx";
 import ForgotPasswordPage from "views/Pages/ForgotPasswordPage";
+import ResetPasswordPage from "views/Pages/ResetPasswordPage";
 
 // var routes = [
 //   {
@@ -279,6 +280,13 @@ var routes = [
     name: "Forgot Password",
     icon: "pe-7s-graph",
     component: ForgotPasswordPage
+  },
+  {
+    path: "/reset",
+    layout: "/admin",
+    name: "Reset Password",
+    icon: "pe-7s-graph",
+    component: ResetPasswordPage
   }
 ]
 export default routes;

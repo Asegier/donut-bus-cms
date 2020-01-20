@@ -14,5 +14,15 @@
     "forgotEmailPlaceholder": "Email Address",
     "forgotBtn": "Send Email",
     "forgotCompleteTitle": "Complete!",
-    "forgotCompleteText": "An email has been sent to the email you provided"
+    "forgotCompleteText": "An email has been sent to the email you provided",
+
+    "resetTitle": "請重設你的密碼 EN",
+    "resetPassword": "密碼 EN",
+    "resetPasswordPlaceholder": "請輸入 EN",
+    "resetPasswordAgain": "再次輸入密碼 EN",
+    "resetRequirements1": "至少8個字母 EN",
+    "resetRequirements2": "至少1個大楷字母 EN",
+    "resetRequirements3": "至少1個細楷字母 EN",
+    "resetRequirements4": "至少1個數字或符號 EN",
+    "resetBtn": "完成 EN"
 }

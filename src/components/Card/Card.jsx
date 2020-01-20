@@ -28,7 +28,8 @@ class Card extends Component {
           (this.props.wizard ? " card-wizard" : "") +
           (this.props.login ? " card-login" : "") +
           (this.props.forget ? " card-forget " : "") +
-          (this.props.forgetComplete ? " card-forget__complete" : "")
+          (this.props.forgetComplete ? " card-forget__complete" : "") +
+          (this.props.reset ? " card-reset" : "")
         }
       >
         {this.props.title !== undefined || this.props.category !== undefined ? (

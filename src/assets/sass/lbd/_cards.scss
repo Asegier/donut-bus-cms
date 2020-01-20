@@ -337,7 +337,7 @@
   }
 }
 
-.card-login, .card-forget, .card-forget__complete{
+.card-login, .card-forget, .card-forget__complete, .card-reset{
   width: 600px;
   margin: 0 auto;
   border-radius: 16.5px;
@@ -373,4 +373,30 @@
 
 .card-forget__complete{
   height: 184px;
+}
+
+.card-reset{
+  height: 456px;
+  .resetList{
+      margin-top: 10px;
+    li{
+      margin-bottom: 10px;
+    }
+  }
+  ul {
+    list-style: none;
+    padding-left: 0;
+  }
+  .checked{
+      position: relative;
+      padding-left: 1.5em;  /* space to preserve indentation on wrap */
+  }
+  .checked:before {
+    content: '';  /* placeholder for the SVG */
+    position: absolute;
+    left: 0;  /* place the SVG at the start of the padding */
+    width: 1em;
+    height: 1em;
+    background: url("../img/checkmark.svg") no-repeat;
+  }
 }

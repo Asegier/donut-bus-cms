@@ -47,6 +47,7 @@ import LanguageDetector from "i18next-browser-languagedetector";
 //     cacheUserLanguage: () => {},
 // };
 
+//Merge all JSON files into one.
 const EN = mergeJSON.merge(CommonEN, LoginEN);
 const HK = mergeJSON.merge(CommonHK, LoginHK);
 

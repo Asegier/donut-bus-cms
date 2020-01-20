@@ -14,7 +14,16 @@
     "forgotEmailPlaceholder": "電郵地址",
     "forgotBtn": "發送電郵",
     "forgotCompleteTitle": "請查看電郵",
-    "forgotCompleteText": "我們已將電郵發至你的電郵。請點擊電郵中的連結重新設定密碼。如果還未收到電郵，請查看垃圾郵件箱或按此<a>重新發送郵件。</a>"
+    "forgotCompleteText": "我們已將電郵發至你的電郵。請點擊電郵中的連結重新設定密碼。如果還未收到電郵，請查看垃圾郵件箱或按此<a>重新發送郵件。</a>",
 
+    "resetTitle": "請重設你的密碼",
+    "resetPassword": "密碼",
+    "resetPasswordPlaceholder": "請輸入",
+    "resetPasswordAgain": "再次輸入密碼",
+    "resetRequirements1": "至少8個字母",
+    "resetRequirements2": "至少1個大楷字母",
+    "resetRequirements3": "至少1個細楷字母",
+    "resetRequirements4": "至少1個數字或符號",
+    "resetBtn": "完成"
 
 }
