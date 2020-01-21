@@ -25,6 +25,9 @@ import {
   FormControlFeedback
 } from "react-bootstrap";
 
+import axios from 'axios';
+import oauth from 'axios-oauth-client';
+
 import Card from "components/Card/Card.jsx";
 
 import Button from "components/CustomButton/CustomButton.jsx";
@@ -63,7 +66,22 @@ class Login extends Component {
       }
 }
 
-  handleSubmit = () => {
+  handleSubmit = async (e) => {
+    e.preventDefault();
+    // const encodedUserPass = btoa(`${this.emailInput.value}:${this.passwordInput.value}`);
+    const encodedUserPass = btoa("super_admin_1:12qwQW!@");
+    const getClientCredentials = oauth.client(axios.create({
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+        'Authorization': `Basic ${encodedUserPass}`
+      }
+    }), {
+      url: 'http://13.75.68.87:8080/oauth/token',
+      grant_type: 'client_credentials',
+    })
+    const auth = await getClientCredentials();
+
+    console.log('this is the auth', auth);
     this.setState({error: ""});
   }
 

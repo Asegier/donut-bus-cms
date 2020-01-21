@@ -3,6 +3,8 @@
   "version": "1.2.0",
   "private": true,
   "dependencies": {
+    "axios": "^0.19.1",
+    "axios-oauth-client": "^1.2.1",
     "bootstrap": "3.3.7",
     "chartist": "0.10.1",
     "history": "4.9.0",
@@ -13,6 +15,7 @@
     "node-sass": "4.12.0",
     "nouislider": "13.1.5",
     "perfect-scrollbar": "1.4.0",
+    "qs": "^6.9.1",
     "react": "16.8.6",
     "react-big-calendar": "0.20.4",
     "react-bootstrap": "0.32.4",
