@@ -76,7 +76,7 @@ class Login extends Component {
         'Authorization': `Basic ${encodedUserPass}`
       }
     }), {
-      url: 'http://13.75.68.87:8080/oauth/token',
+      url: 'https://donut-bus-restful-dev-api-1579773509959.azurewebsites.net/oauth/token',
       grant_type: 'client_credentials',
     })
     const auth = await getClientCredentials();
